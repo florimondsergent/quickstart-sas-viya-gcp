@@ -25,7 +25,7 @@ def GenerateConfig(context):
             'type': "gcp-types/compute-v1:subnetworks",
             'properties': {
                 'region': region,
-                'ipCidrRange': "10.0.128.0/20",
+                'ipCidrRange': "10.0.128.0/26",
                 'network': "$(ref.{}-vpc.selfLink)".format(deployment)
             }
         },
@@ -34,7 +34,7 @@ def GenerateConfig(context):
             'type': "gcp-types/compute-v1:subnetworks",
             'properties': {
                 'region': region,
-                'ipCidrRange': "10.20.128.0/20",
+                'ipCidrRange': "10.20.128.0/26",
                 'network': "$(ref.{}-vpc.selfLink)".format(deployment)
             }
         },
