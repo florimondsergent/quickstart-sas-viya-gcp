@@ -8,10 +8,10 @@ resources:
     ### Replace these variables with customer provided values
 
     # Google Cloud Platform deployment zone
-    Zone: GCP_ZONE
+    Zone: europe-west4-a 
 
     # SSH Public Key added to Anisible Controller for ssh access.
-    SSHPublicKey: The full ssh public key that will be added to the servers
+    SSHPublicKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCVuZEenREVHDa0UtCsnIoCZSJXLm+QHHcGOcyX8sV0p1tU0tF38tTJYHFkw2Bo6elRD6kSZPN7dYLprdTo4Q8XOCwexqAr3IJNu84dx4ZGvrCRjktTzAsCDzi6pVsi29boeZzkKCIcczlbdhFuwPQ8sDM+u8+h5BTW2adk+i+P/J/7FVuWlCuF+7fQz5SSymXZdJx+88uV8GKC+/24n8aY3+bOohEgmH0C+PyNVzHodwMI8y8wGIliBgdXGxoX4AEcmhW3KioaU68wYJehT5nHXh11I13Xw+9uX8XR3+vEeORLeu4wVWIiYUWErk/eVqlu7bQF+Cp4/4LCkJr5eub florimond_sergent_sanofi_com
 
     # Password of the SAS Admin Users (sasboot, optionally sasadmin). Must have at least 6 and no more than 255 characters.
     SASAdminPass: PASSWORD
@@ -19,14 +19,14 @@ resources:
     SASUserPass: PASSWORD
 
     # Google storage bucket location and file name of SAS License file
-    DeploymentDataLocation: gs://BUCKET_PATH/LICENSE_FILENAME.ZIP
+    DeploymentDataLocation: gs://wise-viya/SAS_Viya_deployment_data.zip
     # OPTIONAL: Google storage bucket location of mirror
     # DeploymentMirror: gs://BUCKET_PATH/MIRROR_DIRECTORY
 
     # Allow inbound SSH traffic to the Ansible Controller from this CIDR block (IP address range). Must be a valid IP CIDR range of the form x.x.x.x/x.
-    AdminIngressLocation: x.x.x.x/x
+    AdminIngressLocation: 10.11.131.192/26 
     # Allow inbound HTTP(S) traffic to the Web Server from this CIDR block (IP address range). Must be a valid IP CIDR range of the form x.x.x.x/x.
-    WebIngressLocation: x.x.x.x/x
+    WebIngressLocation: 10.11.131.192/26 
 
     # The number of Viya compute nodes to create. Note: Selecting 1 will install a SMP CAS deployment, but selecting 2 or more will create a MPP CAS deployment (controller + n workers deployment; max number of workers is 10).
     CASInstanceCount: 1
