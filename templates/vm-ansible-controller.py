@@ -32,7 +32,7 @@ yum install -y git
 ###################################
 # Getting quick start scripts from Github
 ###################################
-git clone https://github.com/sassoftware/quickstart-sas-viya-gcp $INSTALL_DIR
+git clone https://github.com/florimondsergent/quickstart-sas-viya-gcp.git $INSTALL_DIR
 # Clean up GitHub identifier files
 pushd $INSTALL_DIR
 rm -rf .git*
